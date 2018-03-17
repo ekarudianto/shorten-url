@@ -1,10 +1,10 @@
 ## Dependencies
 
 Make sure you have these components installed
-- Golang [https://golang.org/](More info)
-- Buffalo [https://gobuffalo.io/en](More info)
-- Postgressql [https://www.postgresql.org/](More info)
-- Nodejs [https://nodejs.org/en/](More info)
+- Golang [https://golang.org/](info)
+- Buffalo [https://gobuffalo.io/en](info)
+- Postgressql [https://www.postgresql.org/](info)
+- Nodejs [https://nodejs.org/en/](info)
 
 ### Create Your Databases
 
