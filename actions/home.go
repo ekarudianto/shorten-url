@@ -41,7 +41,7 @@ func ShortenURL(c buffalo.Context) error {
 	// Create one registry
 	if err := tx.Where("links.link = ?", url).First(link); err != nil {
 		link.Link = url
-		link.ShortLink = link.RandSeq(tx, 6)
+		link.ShortLink = link.RandSeq(tx)
 
 		verrs, e := tx.ValidateAndCreate(link)
 

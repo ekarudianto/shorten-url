@@ -24,17 +24,18 @@ func (l Link) String() string {
 }
 
 // Method to generate random slugs
-func (l *Link) RandSeq(tx *pop.Connection, n int) string {
+func (l *Link) RandSeq(tx *pop.Connection) string {
 	var letters = []rune("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789$-_.+!*'()")
+	var letterLen int = 6
 
-	b := make([]rune, n)
+	b := make([]rune, letterLen)
 	for i := range b {
 		b[i] = letters[rand.Intn(len(letters))]
 	}
 
 	// Recursive search if there is existing slugs
 	if err := tx.Where("links.short_link = ?", string(b)).First(l); err == nil {
-		return l.RandSeq(tx, 6)
+		return l.RandSeq(tx)
 	}
 
 	return string(b)
