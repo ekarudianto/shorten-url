@@ -34,7 +34,7 @@ func App() *buffalo.App {
 
 		// Routing collection
 		app.GET("/", HomeHandler)
-		app.GET("/{encodedURL}", DecodeURL)
+		app.GET("/{shortURL}", DecodeURL)
 
 		app.POST("/shorten", ShortenURL)
 

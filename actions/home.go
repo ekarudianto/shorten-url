@@ -14,7 +14,14 @@ func HomeHandler(c buffalo.Context) error {
 
 // Decode url
 func DecodeURL(c buffalo.Context) error {
-	return c.Render(200, r.JSON(map[string]string{"version": "v1.0.0"}))
+	tx := c.Value("tx").(*pop.Connection)
+	link := &models.Link{}
+
+	if err := tx.Where("short_link = ?", c.Param("shortURL")).First(link); err != nil {
+		return c.Error(404, err)
+	}
+
+	return c.Redirect(302, link.Link)
 }
 
 // Short url
