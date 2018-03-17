@@ -1,3 +1,29 @@
 @import "~bootstrap-sass/assets/stylesheets/_bootstrap-sprockets.scss";
 @import "~bootstrap-sass/assets/stylesheets/_bootstrap.scss";
 @import "~font-awesome/css/font-awesome.css";
+
+.url-form {
+    margin: 10% auto;
+
+    h2 {
+        text-align: center;
+    }
+
+    .summary {
+        background: #44a020;
+        border-radius: 2px;
+        color: #FFF;
+        display: none;
+        margin-top: 10px;
+        padding: 20px;
+    }
+
+    .summary.error {
+        background: #ff5454;
+    }
+}
+
+#shortenUrl {
+    color: #FFF;
+    font-style: italic;
+}
